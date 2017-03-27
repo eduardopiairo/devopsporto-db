@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>#DBNAME#</id>
+    <version>0.0.0</version>
+    <authors>EduardoPiairo</authors>
+    <owners>EduardoPiairo</owners>
+    <description>#DBNAME# ARM template</description>
+  </metadata>
+  <files>
+	<file src="arm\#DBNAME#.parameters.json" target="."/>
+    <file src="arm\SQLDatabaseTemplate.json" target="."/>
+	<file src="conf\*.*" target=".\conf"/>
+	<file src="drivers\*.*" target=".\drivers"/>
+	<file src="jars\*.*" target=".\jars"/>
+	<file src="lib\*.*" target=".\lib"/>
+	<file src="sql\*.*" target=".\sql" />
+	<file src="flyway.cmd" target="." />
+  </files>
+</package>
