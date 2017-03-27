@@ -8,11 +8,11 @@
     },
 
     "databaseName": {
-      "value": "DevOpsPorto"
+      "value": "DevOpsPorto-Db"
     },
 
     "sqlserverName": {
-      "value": "devopsporto-sqlserver"
+      "value": "devopsporto-db-sqlserver"
     },
 
     "maxSizeBytes": {
