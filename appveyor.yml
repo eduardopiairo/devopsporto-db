@@ -1,0 +1,5 @@
+version: '0.0.{build}'
+
+test_script:
+  - ps: Write-Host "This is PowerShell"
+
