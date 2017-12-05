@@ -1,4 +1,4 @@
-version: 0.0.1
+name: 0.0.$(Rev:.rr)
 
 queue:
   name: Asus-UX360
