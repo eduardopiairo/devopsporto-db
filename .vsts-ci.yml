@@ -10,7 +10,7 @@ steps:
 - task: PowerShell@1
   inputs:
     scriptName: "build_db_nuspec.ps1"
-    arguments: "DevOpsPorto-Db
+    arguments: "DevOpsPorto-Db"
   displayName: "create nuspec"
 
 
