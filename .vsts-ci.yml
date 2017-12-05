@@ -9,7 +9,7 @@ steps:
   inputs:
     scriptName: "build_db_nuspec.ps1"
     arguments: ""DevOpsPorto-Db""
-    displayName: "create nuspec"
+  displayName: "create nuspec"
 
 
 
