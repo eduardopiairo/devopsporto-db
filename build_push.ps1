@@ -3,7 +3,7 @@ Param(
 	[Parameter(Mandatory=$true)][string]$resourceName)
 	
 $packExtension = ".nupkg"	
-$packPath = "..\packages\" + $resourceName
+$packPath = "..\packages\" + $resourceName + "."
 
 $packFullPath = $packPath + $buildNumber + $packExtension 
 
