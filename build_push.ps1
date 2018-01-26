@@ -10,6 +10,6 @@ $packFullPath = $packPath + $buildNumber + $packExtension
 
 Write-Output $packFullPath
 
-nuget push $packFullPath -Source http://localhost:8091/nuget/packages -ApiKey $apiKey 
+nuget push $packFullPath -Source http://localhost:8090/nuget/packages -ApiKey $apiKey 
 
 exit $LastExitCode
