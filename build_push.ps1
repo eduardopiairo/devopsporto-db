@@ -4,9 +4,8 @@ Param(
 	
 $packExtension = ".nupkg"	
 $packPath = "..\packages\" + $resourceName
-$packVersion = ".0.0." + $buildNumber
 
-$packFullPath = $packPath + $packVersion + $packExtension 
+$packFullPath = $packPath + $buildNumber + $packExtension 
 
 Write-Output $packFullPath
 
