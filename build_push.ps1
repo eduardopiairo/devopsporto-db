@@ -1,15 +1,15 @@
 Param(
 	[Parameter(Mandatory=$true)][string]$buildNumber,
-	[Parameter(Mandatory=$true)][string]$resourceName)
+	[Parameter(Mandatory=$true)][string]$resourceName,
+	[Parameter(Mandatory=$true)][string]$apiKey)
 	
 $packExtension = ".nupkg"	
-$packPath = "..\packages\" + $resourceName
-$packVersion = ".0.0." + $buildNumber
+$packPath = "..\packages\" + $resourceName + "."
 
-$packFullPath = $packPath + $packVersion + $packExtension 
+$packFullPath = $packPath + $buildNumber + $packExtension 
 
 Write-Output $packFullPath
 
-nuget push $packFullPath -Source http://localhost:8091/nuget/packages -ApiKey API-A3EDYTKSDBU36DMH3VBZL4OWWYY 
+nuget push $packFullPath -Source http://localhost:8090/nuget/packages -ApiKey $apiKey 
 
 exit $LastExitCode
