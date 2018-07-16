@@ -1,0 +1,17 @@
+# build version
+name: 0.0.$(Rev:.rr)
+
+# queue config
+queue:
+  name: Asus-UX360
+  demands: DotNetFramework
+
+steps:
+- task: PowerShell@1
+  inputs:
+    scriptName: "build_db_nuspec.ps1"
+    arguments: "DevOpsPorto-Db"
+  displayName: "create nuspec"
+
+
+

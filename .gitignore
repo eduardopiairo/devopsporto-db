@@ -1,0 +1,15 @@
+# VS Code
+.vscode/*
+
+*.cache
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+
+
+#Microsoft Visual Studio
+DevOpsPorto.Db/*
