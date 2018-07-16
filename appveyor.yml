@@ -1,14 +1,16 @@
+# versioning
 version: '0.0.{build}'
 
+# install phase
 install:
   # to run script as a PowerShell command prepend it with ps:
   - ps: Write-Host 'This is PowerShell - install'
 
-
+# build pahse
 build_script:
   - ps: Write-Host "This is PowerShell - build"
 
-
+# test phase
 test_script:
   - ps: Write-Host "This is PowerShell - test"
 
