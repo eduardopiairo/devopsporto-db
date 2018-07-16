@@ -9,3 +9,7 @@
 *.userosscache
 *.sln.docstates
 .vs/
+
+
+#Microsoft Visual Studio
+DevOpsPorto.Db/*
