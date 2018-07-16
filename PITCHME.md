@@ -1,5 +1,5 @@
-# Adding unit tests with tSQLt to the database deployment pipeline
+## Adding unit tests with tSQLt to the database deployment pipeline
 
-## Eduardo Piairo
+### Eduardo Piairo
 
 ---
