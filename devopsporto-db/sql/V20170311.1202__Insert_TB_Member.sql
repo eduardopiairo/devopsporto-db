@@ -1,2 +1,2 @@
-INSERT INTO [dbo].[Member] ([MemberFirstName],[MemberLastName]) VALUES ('Eduardo','Piairo')
-INSERT INTO [dbo].[Member] ([MemberFirstName],[MemberLastName]) VALUES ('Miguel','Alho')
+INSERT INTO [dbo].[Member] ([MemberUserName],[MemberFirstName],[MemberLastName]) VALUES ('ed.piairo','Eduardo','Piairo')
+INSERT INTO [dbo].[Member] ([MemberUserName],[MemberFirstName],[MemberLastName]) VALUES ('garlic.mike''Miguel','Alho')
