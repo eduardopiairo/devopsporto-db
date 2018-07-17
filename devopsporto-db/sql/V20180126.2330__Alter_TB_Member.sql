@@ -1,1 +1,1 @@
-ALTER TABLE Member ADD RoleId INT;
+ALTER TABLE Member ADD MemberRoleId INT;
