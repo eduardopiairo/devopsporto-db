@@ -26,5 +26,5 @@ BEGIN
       FROM dbo.Member;
 
 ------Assertion
-    EXEC tSQLt.AssertNotEmptyTable 'actual';
+    EXEC tSQLt.AssertEmptyTable 'actual';
 END;
