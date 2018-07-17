@@ -6,4 +6,4 @@ param(
 
     )
 
-Invoke-Sqlcmd -ServerInstance $serverName -Database $databaseName -Username $user -Password $pass -InputFile ".\tSQLt\sql\CLR.sql"
+Invoke-Sqlcmd -ServerInstance $serverName -Database $databaseName -Username $user -Password $pass -InputFile ".\tSQLt\sql\tSQLt.class.sql"
