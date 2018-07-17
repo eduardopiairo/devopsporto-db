@@ -9,6 +9,6 @@ BEGIN
 	SET NOCOUNT ON;
 
     -- Insert statements for procedure here
-	UPDATE dbo.Member SET RoleId = @RoleId WHERE MemberId = @userId
+	UPDATE dbo.Member SET MemberRoleId = @RoleId WHERE MemberId = @userId
 END
 GO
