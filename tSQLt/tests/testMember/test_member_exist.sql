@@ -1,4 +1,4 @@
-ALTER PROCEDURE testMember.[test that a member exist]
+CREATE PROCEDURE testMember.[test that a member exist]
 AS
 BEGIN
 ------Fake Table
@@ -21,14 +21,12 @@ BEGIN
                          MemberUserName ,
                          MemberFirstName ,
                          MemberLastName ,
-                         MemberPassword ,
-                         RoleId )
+                         MemberRoleId )
     VALUES ( 0 ,   -- MemberId - int
              N'eduardo.piairo' , -- MemberUserName - nvarchar(50)
              N'Eduardo' , -- MemberFirstName - nvarchar(50)
              N'Pairo' , -- MemberLastName - nvarchar(50)
-             N'' , -- MemberPassword - nvarchar(50)
-             0     -- RoleId - int
+             0     -- MemberRoleId - int
         )
 
 	INSERT INTO #users

@@ -10,20 +10,18 @@ BEGIN
                          MemberUserName ,
                          MemberFirstName ,
                          MemberLastName ,
-                         MemberPassword ,
-                         RoleId )
+                         MemberRoleId )
     VALUES ( 0 ,   -- MemberId - int
              N'eduardo.piairo' , -- MemberUserName - nvarchar(50)
              N'Eduardo' , -- MemberFirstName - nvarchar(50)
              N'Pairo' , -- MemberLastName - nvarchar(50)
-             N'' , -- MemberPassword - nvarchar(50)
-             2     -- RoleId - int
+             2     -- MemberRoleId - int
         )
 
 ------Execution
     EXEC dbo.spUpdateMemberRole @userId = 0 , @roleId = 0
 
-    SELECT @theRole = RoleId FROM dbo.Member WHERE MemberId = 0
+    SELECT @theRole = MemberRoleId FROM dbo.Member WHERE MemberId = 0
 	
 
 ------Assertion

@@ -20,5 +20,5 @@ exec tSQLt.Run '[testMember].[test that role member is updated]'
 exec tSQLt.Run '[testMember]' 
 
 -- Run all tests
-tSQLt.RunAll 
+exec tSQLt.RunAll 
 
