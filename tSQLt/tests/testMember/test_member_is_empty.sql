@@ -12,17 +12,19 @@ BEGIN
                          MemberLastName ,
                          MemberRoleId )
     VALUES ( 0 ,   -- MemberId - int
-             N'eduardo.piair' , -- MemberUserName - nvarchar(50)
+             N'eduardo.piairo' , -- MemberUserName - nvarchar(50)
              N'Eduardo' , -- MemberFirstName - nvarchar(50)
              N'Pairo' , -- MemberLastName - nvarchar(50)
              0     -- MemberRoleId - int
         )
 
 ------Execution
+    DELETE FROM Member
+    
     SELECT MemberId, MemberUserName
       INTO actual
       FROM dbo.Member;
 
 ------Assertion
-    EXEC tSQLt.AssertEmptyTable 'actual';
+    EXEC tSQLt.AssertNotEmptyTable 'actual';
 END;
