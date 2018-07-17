@@ -1,8 +1,3 @@
-CREATE DATABASE [DevOpsPorto-db]
-
-USE [DevOpsPorto-db]
-GO
-
 /*Show advanced global configuration settings */
 sp_configure 'show advanced options', 1
 RECONFIGURE

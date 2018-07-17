@@ -6,4 +6,4 @@ param(
 
     )
 
-Invoke-Sqlcmd -ServerInstance $serverName -Database $databaseName -Username $user -Password $pass -InputFile ".\tSQLt\clr-enabled_strict-security.sql"
+Invoke-Sqlcmd -ServerInstance $serverName -Database $databaseName -Username $user -Password $pass -InputFile ".\tSQLt\sql\clr-enabled_strict-security.sql"
