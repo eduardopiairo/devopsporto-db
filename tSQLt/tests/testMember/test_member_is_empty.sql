@@ -19,7 +19,7 @@ BEGIN
         )
 
 ------Execution
-    --DELETE FROM Member
+    DELETE FROM Member
     
     SELECT MemberId, MemberUserName
       INTO actual
