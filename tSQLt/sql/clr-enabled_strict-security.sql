@@ -1,3 +1,9 @@
+/*Show advanced global configuration settings */
+sp_configure 'show advanced options', 1
+RECONFIGURE
+GO
+
+
 /** CLR enable option **/
 /* By default clr enabled is disabled (0) */
 
