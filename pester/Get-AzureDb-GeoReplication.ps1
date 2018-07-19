@@ -4,9 +4,9 @@
         [Parameter(Mandatory=$true)][string]$databaseName
     )
 
-    $rg = "dcn-live"
+    $rg = "tugait2018"
 
-    $sqlServer = "dcn-live-sqlserver"
+    $sqlServer = "devopsporto-db-sqlserver"
 
     $replicationInfo = Get-AzureRmSqlDatabaseReplicationLink -ResourceGroupName $rg -ServerName $sqlServer -DatabaseName $databaseName -PartnerResourceGroupName $rg
 
