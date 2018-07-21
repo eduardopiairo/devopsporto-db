@@ -1,10 +1,20 @@
 # versioning
 version: '0.0.{build}-{branch}'
 
+# Build worker image (VM template)
+image: Visual Studio 2017
+
 # branches
 branches:
   only:
     - tugait2018-feature1
+
+# Build worker image (VM template)
+image: Visual Studio 2017
+
+# test phase
+test_script:
+  - ps: .\tSQLt\ps\drop-db-test.ps1
 
 # install phase
 install:
@@ -15,7 +25,5 @@ install:
 build_script:
   - ps: Write-Host "This is PowerShell - build"
 
-# test phase
-test_script:
-  - ps: Write-Host "This is PowerShell - test"
+
 
