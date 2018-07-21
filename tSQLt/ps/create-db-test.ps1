@@ -5,4 +5,4 @@ param(
 
     )
 
-Invoke-Sqlcmd -ServerInstance $serverName -Database "master" -Username $user -Password $pass -InputFile ".\tSQLt\sql\create-test-database.sql"
+sqlcmd -S $serverName -d "master" -U $user -P $pass -i ".\tSQLt\sql\create-test-database.sql"
