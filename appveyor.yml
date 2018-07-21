@@ -1,9 +1,6 @@
 # versioning
 version: '0.0.{build}-{branch}'
 
-# Build worker image (VM template)
-image: Visual Studio 2017
-
 # branches
 branches:
   only:
