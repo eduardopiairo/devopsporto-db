@@ -22,6 +22,7 @@ build_script:
   - ps: Write-Host 'This is PowerShell - Build Phase'
   - ps: .\tSQLt\ps\drop-db-test.ps1 "(local)\SQL2017" "sa" "Password12!"
   - ps: .\tSQLt\ps\create-db-test.ps1 "(local)\SQL2017" "sa" "Password12!"
+  - ps: .\tSQLt\ps\flyway.ps1 "(local)\SQL2017" "DevOpsPorto-Db-Test" "sa" "Password12!"
 
 # test phase
 test_script:
