@@ -9,12 +9,17 @@ branches:
 # Build worker image (VM template)
 image: Visual Studio 2017
 
+# start SQL server service
 services:
   - mssql2017
 
+# build phase
+build_script:
+  - ps: .\tSQLt\ps\drop-db-test.ps1 "(local)\SQL2017" "sa" "Password12!"
+
 # test phase
-test_script:
-  - ps: .\tSQLt\ps\drop-db-test.ps1
+#test_script:
+#  - ps: .\tSQLt\ps\drop-db-test.ps1
 
 # install phase
 install:
