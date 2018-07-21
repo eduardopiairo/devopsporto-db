@@ -11,7 +11,7 @@ image: Visual Studio 2017
 
 # test phase
 test_script:
-  - ps: .\tSQLt\ps\drop-db-test.ps1 "localhost" sa Password12!
+  - ps: .\tSQLt\ps\drop-db-test.ps1
 
 # install phase
 install:
