@@ -1,7 +1,8 @@
 # versioning
-version: '0.0.{build}'
+version: '0.0.{build}-{branch}'
 
-#branches:
+# branches
+branches:
   only:
     - tugait2018
 
