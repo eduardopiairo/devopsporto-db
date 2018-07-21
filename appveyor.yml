@@ -11,7 +11,7 @@ image: Visual Studio 2017
 
 # test phase
 test_script:
-  - ps: .\tSQLt\ps\drop-db-test.ps1 "SQL2017" "sa" "Password12!"
+  - ps: .\tSQLt\ps\drop-db-test.ps1 "(local)\SQL2017" "sa" "Password12!"
 
 # install phase
 install:
