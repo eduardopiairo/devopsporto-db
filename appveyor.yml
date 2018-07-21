@@ -1,5 +1,9 @@
 # versioning
-version: '0.0.{build}'
+version: '0.0.{build}-{branch}'
+
+#branches:
+  only:
+    - tugait2018
 
 # install phase
 install:
