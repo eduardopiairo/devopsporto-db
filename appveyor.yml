@@ -15,15 +15,15 @@ services:
 
 # install phase
 install:
-  # to run script as a PowerShell command prepend it with ps:
-  - ps: .\tSQLt\ps\drop-db-test.ps1 "(local)\SQL2017" "sa" "Password12!"
+  - ps: Write-Host 'This is PowerShell - Install Phase'
 
 # build phase
 build_script:
-  - ps: Write-Host 'This is PowerShell - build'
+  - ps: Write-Host 'This is PowerShell - Build Phase'
+  - ps: .\tSQLt\ps\drop-db-test.ps1 "(local)\SQL2017" "sa" "Password12!"
 
 # test phase
-#test_script:
-#  - ps: .\tSQLt\ps\drop-db-test.ps1
+test_script:
+  - ps: Write-Host 'This is PowerShell - Test Phase'
 
 
