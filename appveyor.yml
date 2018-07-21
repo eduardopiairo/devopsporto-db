@@ -9,6 +9,9 @@ branches:
 # Build worker image (VM template)
 image: Visual Studio 2017
 
+services:
+  - mssql2017
+
 # test phase
 test_script:
   - ps: .\tSQLt\ps\drop-db-test.ps1
