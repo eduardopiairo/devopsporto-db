@@ -1,7 +1,8 @@
 CREATE TABLE [dbo].[Member](
 	[MemberId] [INT] IDENTITY(1,1) NOT NULL,
+	[MemberUserName] [NVARCHAR](50) NOT NULL,
 	[MemberFirstName] [NVARCHAR](50) NULL,
-	[MemberLastName] [NVARCHAR](50) NULL,
+	[MemberLastName] [NVARCHAR](50) NULL	 
  CONSTRAINT [PK_Member] PRIMARY KEY CLUSTERED 
 (
 	[MemberId] ASC
