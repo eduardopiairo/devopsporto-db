@@ -8,7 +8,7 @@
 
 ---
 
-##About Me
+## About Me
 ### Eduardo Piairo
 <span class="smallText">
     DevOps Coach @ Natixis <br/> 
@@ -25,3 +25,11 @@
 
 ---
 
+## tSQLt
+
+Database unit testing framework for Microsoft SQL Server
+
+* Allow to write T-SQL code as tests
+* Tests are automatically run within transactions
+* Provides a way to isolate code and tables using mocking
+* Output can be plain text or XML
