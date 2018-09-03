@@ -4,12 +4,15 @@
 
 ---
 
-
+## Eduardo Piairo
 <span class="smallText">
-    DevOps Coach @ Natixis<br/> 
-    Founder DevOps Coach
-    Friend of Redgate</span>
+    DevOps Coach @ Natixis <br/> 
+    Founder DevOps Coach <br/>
+    Friend of Redgate
+</span>
+
 <hr />
+
 @fa[twitter] @EdPiairo <br/>
 @fa[globe] https://www.eduardopiairo.com </br>
 @fa[envelope] eduardopiairo@gmal.com <br/>
