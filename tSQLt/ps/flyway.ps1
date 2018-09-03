@@ -6,7 +6,23 @@ param(
 
     )
 
-$conString = "jdbc:sqlserver://$serverName;databaseName=$databaseName"
+if($serverName -like "*,*")
+{
+    $subServername = $serverName -split ","
+    $server = $subServername[0]
+    $port = $subServername[1]
+    Write-Host($server)
+    Write-Host($port)
+    $miniConn = $server + ":" + $port
+    Write-Host($miniConn)
+
+    $conString = "jdbc:sqlserver://$miniConn;databaseName=$databaseName"
+    Write-Host($conString)
+}
+else {
+    $conString = "jdbc:sqlserver://$serverName;databaseName=$databaseName"
+    Write-Host($conString)
+}
 
 .\devopsporto-db\flyway.cmd -user="$user" -password="$pass" -url="$conString" info
 
