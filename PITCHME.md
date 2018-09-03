@@ -1,10 +1,15 @@
-## Adding unit tests with tSQLt to the database deployment pipeline
+@title[Adding unit tests with tSQLt to the database deployment pipeline]
+
+# Adding unit tests with tSQLt to the database deployment pipeline
 
 ### Eduardo Piairo
 
+#sqlsatcambridge
+
 ---
 
-## Eduardo Piairo
+##About Me
+### Eduardo Piairo
 <span class="smallText">
     DevOps Coach @ Natixis <br/> 
     Founder DevOps Porto <br/>
@@ -19,3 +24,4 @@
 @fa[linkedin] www.linkedin.com/in/eduardopiairo <br/>
 
 ---
+
