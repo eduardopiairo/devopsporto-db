@@ -30,7 +30,7 @@
     "administratorLoginPassword": {
       "reference": {
         "keyVault": {
-          "id": "/subscriptions/82e8c2f6-bf2f-400d-9a76-1db18177cbd4/resourceGroups/sqlsatcamb-mng/providers/Microsoft.KeyVault/vaults/devopsporto-key-vault"
+          "id": "/subscriptions/82e8c2f6-bf2f-400d-9a76-1db18177cbd4/resourceGroups/mng/providers/Microsoft.KeyVault/vaults/devopsporto-key-vault"
         },
         "secretName": "azure-sql-admin"
       }
