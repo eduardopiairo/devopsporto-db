@@ -14,8 +14,8 @@
 <hr>
 
 @fa[twitter] @EdPiairo <br/>
-@fa[linkedin] eduardopiairo <br/>
 @fa[globe] www.eduardopiairo.com <br/>
 @fa[envelope] eduardopiairo@gmal.com <br/>
+@fa[linkedin] www.linkedin.com/in/eduardopiairo <br/>
 
 ---
