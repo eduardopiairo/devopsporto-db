@@ -5,7 +5,7 @@ $sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path) -replace '\.Tests\.', '.'
 Describe "Get-AzureDb-TransparentDataEncryption" {
     Context "devopsporto-db-sqlserver"{
         It "TransparentDataEncryption for DevOpsPorto-Db (devopsporto-db-sqlserver) should Enabled " {
-            Get-AzureRmSqlDatabaseTransparentDataEncryption "tugait2018" "devopsporto-db-sqlserver" "DevOpsPorto-Db" | Should -Be $true
+            Get-AzureRmSqlDatabaseTransparentDataEncryption "sqlsatcamb" "devopsporto-db-sqlserver" "DevOpsPorto-Db" | Should -Be $true
         }
     }
 }

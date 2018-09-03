@@ -4,7 +4,7 @@
         [Parameter(Mandatory=$true)][string]$databaseName
     )
 
-    $rg = "tugait2018"
+    $rg = "sqlsatcamb"
 
     $sqlServer = "devopsporto-db-sqlserver"
 
