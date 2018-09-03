@@ -11,10 +11,10 @@
     Friend of Redgate
 </span>
 
-<hr />
+<hr>
 
 @fa[twitter] @EdPiairo <br/>
-@fa[globe] https://www.eduardopiairo.com </br>
+@fa[globe] www.eduardopiairo.com </br>
 @fa[envelope] eduardopiairo@gmal.com <br/>
 
 ---
