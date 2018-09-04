@@ -63,6 +63,16 @@ Database unit testing framework for Microsoft SQL Server
 * Stored Procedure
     * Starts with the word **test**
     * Must be in a schema that contains the extended property tSQLt.TestClass = 1
-    * tSQLt.NewTestClass
+        * tSQLt.NewTestClass
     * Each test is wrapped in a transaction
-    * Modifications are rolled back and the results saved
+        * Modifications are rolled back and the results saved
+
+---
+
+## What's a tSQLt test?
+
+* Benefits
+    * Business requirements documentation
+    * Code refactoring
+    * Isolation - unrelated changes do not affect other parts of the system
+    * Help structure code into distinct components – keep it small
