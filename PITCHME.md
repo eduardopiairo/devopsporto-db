@@ -11,9 +11,7 @@
 ## About Me
 ### Eduardo Piairo
 <span class="smallText">
-    DevOps Coach @ Natixis <br/> 
-    Founder DevOps Porto <br/>
-    Friend of Redgate
+    DevOps Coach @ Natixis | Founder DevOps Porto | Friend of Redgate
 </span>
 
 <hr>
@@ -45,3 +43,5 @@ Database unit testing framework for Microsoft SQL Server
 </div>
 
 ---
+
+## tSQLt Install
