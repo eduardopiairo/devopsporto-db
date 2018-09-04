@@ -85,6 +85,8 @@ html:-moz-full-screen-ancestor {
   max-width: none;
 }
 
+.reveal .smallText{ font-size:50%}
+
 .gp-tip { font-size : 1.5em; }
 
 .gp-contact { font-size : 1.4em; }
