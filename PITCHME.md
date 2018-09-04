@@ -1,8 +1,8 @@
 @title[Adding unit tests with tSQLt to the database deployment pipeline]
 
-### Adding unit tests with tSQLt to the database deployment pipeline
+## Adding unit tests with tSQLt to the database deployment pipeline
 
-#### Eduardo Piairo
+### Eduardo Piairo
 
 #sqlsatcambridge
 
@@ -49,3 +49,9 @@ Database unit testing framework for Microsoft SQL Server
 ---
 
 ## tSQLt Install
+
+* tSQLt.class.sql 
+    * CLR
+        * clr enabled
+        * clr strict security
+    * Should be installed in the development database
