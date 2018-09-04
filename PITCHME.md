@@ -10,7 +10,6 @@
 
 ## About Me
 
-<hr>
 ### Eduardo Piairo
 
 <hr>
