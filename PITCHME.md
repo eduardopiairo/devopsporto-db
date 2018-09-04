@@ -50,7 +50,7 @@ Database unit testing framework for Microsoft SQL Server
 
 ## tSQLt Install
 
-* tSQLt.class.sql 
+* **tSQLt.class.sql** 
   * CLR
     * clr enabled
     * clr strict security
