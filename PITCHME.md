@@ -55,3 +55,14 @@ Database unit testing framework for Microsoft SQL Server
         * clr enabled
         * clr strict security
     * Should be installed in the development database
+
+---
+
+## What's a tSQLt test?
+
+* Stored Procedure
+    * Starts with the word **test**
+    * Must be in a schema that contains the extended property tSQLt.TestClass = 1
+    * tSQLt.NewTestClass
+    * Each test is wrapped in a transaction
+    * Modifications are rolled back and the results saved
