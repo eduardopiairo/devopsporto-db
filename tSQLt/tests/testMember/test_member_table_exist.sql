@@ -1,6 +1,7 @@
-CREATE PROCEDURE testMember.[test if table Member exist]
+CREATE PROCEDURE testMember.[test that table Member exist]
 AS
 BEGIN
 
+------Assert
     EXEC tSQLt.AssertObjectExists 'Member';
 END;

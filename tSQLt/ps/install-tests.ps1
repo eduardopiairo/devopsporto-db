@@ -14,3 +14,7 @@ Invoke-Sqlcmd -ServerInstance $serverName -Database $databaseName -Username $use
 Invoke-Sqlcmd -ServerInstance $serverName -Database $databaseName -Username $user -Password $pass -InputFile ".\tSQLt\tests\testMember\test_member_is_empty.sql"
 Invoke-Sqlcmd -ServerInstance $serverName -Database $databaseName -Username $user -Password $pass -InputFile ".\tSQLt\tests\testMember\test_member_role_update.sql"
 Invoke-Sqlcmd -ServerInstance $serverName -Database $databaseName -Username $user -Password $pass -InputFile ".\tSQLt\tests\testMember\test_member_table_exist.sql"
+Invoke-Sqlcmd -ServerInstance $serverName -Database $databaseName -Username $user -Password $pass -InputFile ".\tSQLt\tests\testMember\test_member_calculate_age_fake.sql"
+Invoke-Sqlcmd -ServerInstance $serverName -Database $databaseName -Username $user -Password $pass -InputFile ".\tSQLt\tests\testMember\test_member_calculate_age.sql"
+Invoke-Sqlcmd -ServerInstance $serverName -Database $databaseName -Username $user -Password $pass -InputFile ".\tSQLt\tests\testMember\test_member_calculate_sum_ages.sql"
+Invoke-Sqlcmd -ServerInstance $serverName -Database $databaseName -Username $user -Password $pass -InputFile ".\tSQLt\tests\testMember\test_member_calculate_average_ages.sql"

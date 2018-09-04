@@ -1,22 +1,12 @@
 CREATE PROCEDURE testMember.[test that a member exist]
 AS
 BEGIN
-------Fake Table
+------Assemble
+    DECLARE  @actualRowCount INT
+
+	-- Fake Table
     EXEC tSQLt.FakeTable 'dbo.Member';
 
-------Execution
-	CREATE TABLE #users(user_name NVARCHAR(50));
-    INSERT INTO #users
-    EXEC dbo.spLoginUser @userName = N'eduardo.piairo';
-	
-	DECLARE @actualRowCount int = (select count(*) from #users)
-
-------Assertion
-	EXEC tSQLt.AssertNotEquals @Expected = 1 , -- sql_variant
-	                           @Actual = @actualRowCount ,   -- sql_variant
-	                           @Message = N'We expect zero users'     -- nvarchar(max)
-
-------Fake Table	
     INSERT INTO dbo.Member ( MemberId ,
                          MemberUserName ,
                          MemberFirstName ,
@@ -28,14 +18,16 @@ BEGIN
              N'Pairo' , -- MemberLastName - nvarchar(50)
              0     -- MemberRoleId - int
         )
+    
+    CREATE TABLE #users(user_name NVARCHAR(50));
 
+------Act	
 	INSERT INTO #users
     EXEC dbo.spLoginUser @userName = N'eduardo.piairo';
 
-------Execution
 	SELECT @actualRowCount = COUNT(*) from #users
 
-------Assertion
+------Assert
 	EXEC tSQLt.AssertEquals 1, @actualRowCount, N'We expected one user';
 
 END;
