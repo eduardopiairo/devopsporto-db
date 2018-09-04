@@ -30,8 +30,8 @@
 Database unit testing framework for Microsoft SQL Server
 
 <div class="left">
-    <ul>
-        <li class="smallText">‎Allow to write T-SQL code as tests</li></li>
+    <ul class="smallText">
+        <li >‎Allow to write T-SQL code as tests</li></li>
         <li>Tests are automatically run within transactions</li>
         <li>Provides a way to isolate code and tables using mocking</li>
         <li>Output can be plain text or XML</li>
