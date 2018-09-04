@@ -10,15 +10,29 @@
 -- Create new test class
 tSQLt.NewTestClass 'testMember'
 
--- Run individual test
-exec tSQLt.Run '[testMember].[test that a member exist]' 
-exec tSQLt.Run '[testMember].[test that table Member is empty]'
-exec tSQLt.Run '[testMember].[test if table Member exist]' 
-exec tSQLt.Run '[testMember].[test that role member is updated]'
+-- Run all tests
+EXEC tSQLt.RunAll
 
 -- Run a test class
-exec tSQLt.Run '[testMember]' 
+EXEC tSQLt.Run '[testMember]' 
 
--- Run all tests
-exec tSQLt.RunAll 
+-- Run individual test
+EXEC tSQLt.Run '[testMember].[test that table Member exist]' 
+EXEC tSQLt.Run '[testMember].[test that a member exist]'
+EXEC tSQLt.Run '[testMember].[test that table Member is empty]'
+EXEC tSQLt.Run '[testMember].[test that role member is updated]'
+
+
+EXEC tSQLt.Run'[testMember].[test calculate member age]'
+--INSERT INTO [dbo].[Member] ([MemberUserName],[MemberFirstName],[MemberLastName], [MemberRoleId], [MemberBirthDate]) VALUES ('af.pi','afonso','piairo', 3, '2013-06-24 00:00:00.000' )
+EXEC tSQLt.Run'[testMember].[test calculate the sum of all members ages]'
+EXEC tSQLt.Run'[testMember].[test calculate average members age]'
+
+
+
+
+
+
+
+
 

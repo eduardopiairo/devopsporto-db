@@ -1,7 +1,7 @@
 CREATE PROCEDURE testmember.[test calculate member age]
 AS
 BEGIN
-  --Assemble
+------Assemble
   DECLARE @date1 DATETIME
   DECLARE @date2 DATETIME
   DECLARE @expected INT
@@ -12,10 +12,10 @@ BEGIN
 
   SET @expected = 34
   
-  --Act
-	SET @result = (SELECT DATEDIFF(hour,@date1,@date2)/8766)
+------Act
+	SET @result = ([dbo].[GetMemberAge] (@date1,@date2))
   
-  --Assert
+------Assert
 	EXEC tSQLt.AssertEquals @expected, @result;
   
 END;
