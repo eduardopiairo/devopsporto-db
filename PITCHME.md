@@ -9,7 +9,12 @@
 ---
 
 ## About Me
+
+<hr>
 ### Eduardo Piairo
+
+<hr>
+
 <span class="smallText">
     DevOps Coach @ Natixis | Founder DevOps Porto | Friend of Redgate
 </span>
