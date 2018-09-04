@@ -29,11 +29,19 @@
 
 Database unit testing framework for Microsoft SQL Server
 
-* Allow to write T-SQL code as tests
-* Tests are automatically run within transactions
-* Provides a way to isolate code and tables using mocking
-* Output can be plain text or XML
+<div class="left">
+    <ul>
+        <li>‎Allow to write T-SQL code as tests</li></li>
+        <li>Tests are automatically run within transactions</li>
+        <li>Provides a way to isolate code and tables using mocking</li>
+        <li>Output can be plain text or XML</li>
+    </ul>
+</div>
+
+<div class="right">
 
 ![tSQLt](assets/images/tsqlt-logo.png)
+
+</div>
 
 ---
