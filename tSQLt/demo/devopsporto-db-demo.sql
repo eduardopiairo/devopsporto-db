@@ -1,3 +1,7 @@
+-- Drop databases
+-- DROP DATABASE [DevOpsPorto-Db]
+-- DROP DATABASE [DevOpsPorto-Db-Test]
+
 -- Uninstall tSQLt
 --EXEC tSQLt.Uninstall
 
