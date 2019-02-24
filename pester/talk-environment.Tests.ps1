@@ -3,8 +3,8 @@ Describe ("Environment checks for the talk") {
         It "ZoomIt should be running" {
             (Get-Process ZoomIt -ErrorAction SilentlyContinue).Count | Should Be 1
         }
-        It "Slack should be runnig" {
-            (Get-Process slack* -ErrorAction SilentlyContinue).Count | Should Be 1
+        It "Slack should be closed" {
+            (Get-Process slack* -ErrorAction SilentlyContinue).Count | Should Be 0
         }
         It "MS Outlook should be closed" {
             (Get-Process OUTLOOK -ErrorAction SilentlyContinue).Count | Should Be 0
