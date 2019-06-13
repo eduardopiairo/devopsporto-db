@@ -9,11 +9,12 @@
   </metadata>
   <files>
 	<file src="arm\#DBNAME#.parameters.json" target="."/>
-    <file src="arm\SQLDatabaseTemplate.json" target="."/>
+  <file src="arm\SQLDatabaseTemplate.json" target="."/>
 	<file src="conf\*.*" target=".\conf"/>
 	<file src="drivers\*.*" target=".\drivers"/>
 	<file src="jars\*.*" target=".\jars"/>
-	<file src="lib\*.*" target=".\lib"/>
+	<file src="lib\community\*.*" target=".\lib\community"/>
+  <file src="licenses\*.*" target=".\licenses"/>
 	<file src="sql\*.*" target=".\sql" />
 	<file src="flyway.cmd" target="." />
   </files>

@@ -1,3 +1,7 @@
+-- Drop databases
+-- DROP DATABASE [DevOpsPorto-Db]
+-- DROP DATABASE [DevOpsPorto-Db-Test]
+
 -- Uninstall tSQLt
 --EXEC tSQLt.Uninstall
 
@@ -31,7 +35,7 @@ EXEC tSQLt.Run'[testMember].[test calculate member age]'
 
 -- Calucalte the sum of the ages of the members (SP spSumMemberAges)(Uses a fake function Fake_GetMemberAge)
 
--- This insert will make the test fail
+-- This insert will make the test fail (to prove that you cannot rely on data to make your tests - you need to have full control over your test setup)
 --INSERT INTO [dbo].[Member] ([MemberUserName],[MemberFirstName],[MemberLastName], [MemberRoleId], [MemberBirthDate]) VALUES ('af.pi','afonso','piairo', 3, '2013-06-24 00:00:00.000' )
 EXEC tSQLt.Run'[testMember].[test calculate the sum of all members ages]'
 

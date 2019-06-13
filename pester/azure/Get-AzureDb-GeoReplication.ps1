@@ -4,7 +4,7 @@
         [Parameter(Mandatory=$true)][string]$databaseName
     )
 
-    $rg = "sqlsatcamb"
+    $rg = "sqlbits"
 
     $sqlServer = "devopsporto-db-sqlserver"
 

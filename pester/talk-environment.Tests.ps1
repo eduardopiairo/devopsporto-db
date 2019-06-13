@@ -3,8 +3,8 @@ Describe ("Environment checks for the talk") {
         It "ZoomIt should be running" {
             (Get-Process ZoomIt -ErrorAction SilentlyContinue).Count | Should Be 1
         }
-        It "Slack should be runnig" {
-            (Get-Process slack* -ErrorAction SilentlyContinue).Count | Should Be 1
+        It "Slack should be closed" {
+            (Get-Process slack* -ErrorAction SilentlyContinue).Count | Should Be 0
         }
         It "MS Outlook should be closed" {
             (Get-Process OUTLOOK -ErrorAction SilentlyContinue).Count | Should Be 0
@@ -27,13 +27,24 @@ Describe ("Environment checks for the talk") {
         It "GitHub client should be closed" {
             (Get-Process GitHub -ErrorAction SilentlyContinue).Count | Should Be 0
         }
+        It "OneDrive should be closed"{
+            (Get-Process OneDrive -ErrorAction SilentlyContinue).Count | Should Be 0
+        }
+        It "Google Backup & Sync (Google Drive) should be closed"{
+            (Get-Process googledrivesync -ErrorAction SilentlyContinue).Count | Should Be 0
+        }
+    }
+    Context "Octopus Deploy" {
+        It "Octopus Deploy server should be running" {
+            (Get-Process 'Octopus.Server' -ErrorAction SilentlyContinue).Count | Should Be 1
+        }
+        It "Octopus Deploy Tentacle should be running" {
+            (Get-Process 'Tentacle' -ErrorAction SilentlyContinue).Count | Should Be 1
+        }
     }
     Context "Docker" {
         It "Docker for Windows should be running" {
             (Get-Process 'Docker for Windows' -ErrorAction SilentlyContinue).Count | Should Be 1
-        }
-        It "The docker deamon should be running" {
-            (Get-Process dockerd -ErrorAction SilentlyContinue).Count | Should Be 1
         }
         It "No containers should be running" {
             (docker ps).Count | Should Be 1

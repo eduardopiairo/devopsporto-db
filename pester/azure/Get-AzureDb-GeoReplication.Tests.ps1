@@ -4,6 +4,6 @@ $sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path) -replace '\.Tests\.', '.'
 
 Describe "AzureDb-GeoReplication" {
     It "DevOpsPOrto-Db should have geo replication enabled" {
-        Get-AzureDbGeoReplication "DevOpsPOrto-Db" | Should -Be $true
+        Get-AzureDbGeoReplication "DevOpsPorto-Db" | Should -Be $true
     }
 }
