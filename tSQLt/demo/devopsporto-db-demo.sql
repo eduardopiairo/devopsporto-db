@@ -23,12 +23,13 @@ EXEC tSQLt.Run '[testMember]'
 -- Run individual test
 -- Check if the table Member exist in database (TB Member)
 EXEC tSQLt.Run '[testMember].[test that table Member exist]' 
+
 -- Check if a specific member exist in table Member (SP spLoginUser)
-EXEC tSQLt.Run '[testMember].[test that a member exist]'
+--EXEC tSQLt.Run '[testMember].[test that a member exist]'
 -- Chekc if the table Member have no records (TB Member)
-EXEC tSQLt.Run '[testMember].[test that table Member is empty]'
+---EXEC tSQLt.Run '[testMember].[test that table Member is empty]'
 -- Check if the role of a member is updated (SP spUpdateMemberRole)
-EXEC tSQLt.Run '[testMember].[test that role member is updated]'
+--EXEC tSQLt.Run '[testMember].[test that role member is updated]'
 
 -- Calculte the difference between 2 ages (FN GetMemberAges)
 EXEC tSQLt.Run'[testMember].[test calculate member age]'
