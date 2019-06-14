@@ -1,0 +1,1 @@
+INSERT INTO [dbo].[Meetup] ([MeetupName],[MeetupDate]) VALUES ('DevOps Meetup - Hello Docker World','2017-01-01 00:00:00.000')

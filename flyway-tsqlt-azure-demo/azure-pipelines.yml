@@ -1,0 +1,62 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+
+variables:      # pipeline-level
+  #IMPORTANT: keep this name consistent throughout the whole project, wherever you might hardcode database names
+  databaseName: 'flyway-tSQLt-azure-demo'
+  packageName: $(databaseName)
+
+  dev : 'Dev'
+  uat : 'UAT'
+  prod : 'Prod'
+
+  deployScript: 'flyway.ps1'
+
+  # These are Azure Devops Agent Pools. The pools have to be manually created on Azure DevOps, but I believe it might be possible
+  # to automate Agent installation.
+  # Regardless, theses names HAVE TO MATCH the ones you chose on your Azure DevOps Agent Pools.
+  devDeployPool: '$(dev)'
+  uatDeployPool: '$(uat)'
+  prodDeployPool: '$(prod)'
+
+# In this scenario, we have just 3 environments/stages: "Dev" (CI), "UAT" and "Prod". Feel free to create more to contemplate more complex
+# testing stages (e.g. "Regression", "End-To-End")
+stages:
+  # 1st stage: Build & Integration (CI). It should apply migrations to a Dev/CI database, run tSQLt unit tests, and publish the migrations
+  # if successful. IMPORTANT: tSQLt-related code and artifacts should NOT BE PUBLISHED due to their SECURITY VULNERABILITIES.
+  # Only migrations and other strictly necessary files should go beyond Dev.
+- stage: Build
+  jobs:
+  - template: pipeline/pipeline-templates/build-job.yml  # Template reference
+    parameters:
+      deployScript: $(deployScript)
+      databaseName: $(databaseName)
+      environmentName: $(dev)
+      deployPool: $(devDeployPool)
+  # 2nd stage: UAT. Takes the migrations published by the 'Build' stage and applies them to UAT. In this example,
+  # we assume another offsite team takes care of these tests, so we just need to deploy to their UAT environment.
+- stage: DeployToUAT
+  jobs:
+  - template: pipeline/pipeline-templates/deploy-job.yml  # Template reference
+    parameters:
+      deployScript: $(deployScript)
+      databaseName: $(databaseName)
+      environmentName: $(uat)
+      deployPool: $(uatDeployPool)
+  # 3rd stage: Production. If things were OK in UAT, takes the migrations published by the 'Build' stage and applies them to Prod.
+  # This example uses Continuous Deployment (i.e. Production deployments do not need human approval), but can be modified to use
+  # Continuous Delivery instead.
+- stage: DeployToProd
+  jobs:
+  - template: pipeline/pipeline-templates/deploy-job.yml  # Template reference
+    parameters:
+      deployScript: $(deployScript)
+      databaseName: $(databaseName)
+      environmentName: $(prod)
+      deployPool: $(prodDeployPool)

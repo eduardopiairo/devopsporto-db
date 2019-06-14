@@ -1,0 +1,1 @@
+UPDATE dbo.Meetup SET MeetupDate = '2017-03-23 19:00:00.000'
