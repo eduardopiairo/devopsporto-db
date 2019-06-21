@@ -7,7 +7,7 @@ parameters:
 
 jobs:
   - job: Deploy
-    displayName: 'Deploying to ${{parameters.environmentName}} DB...'
+    displayName: 'Deploying to UAT DB...'
     pool:
       name: ${{ parameters.deployPool }}
     steps:
@@ -18,7 +18,7 @@ jobs:
         artifactname: ${{parameters.databaseName}}
         targetPath: '$(System.ArtifactsDirectory)'
     - task: PowerShell@2
-      displayName: 'Deploying to $(environmentName) DB...'
+      displayName: 'Deploying to UAT DB...'
       inputs:
         targetType: filePath
         filePath: '$(System.ArtifactsDirectory)/${{parameters.deployScript}}'
