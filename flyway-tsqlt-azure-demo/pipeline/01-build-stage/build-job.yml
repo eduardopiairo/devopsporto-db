@@ -1,0 +1,31 @@
+# Parameters should be specified by the parent YAML that consumes this template
+parameters:
+  deployScript: 'PleaseProvideThroughTheParentYAML'
+
+  databaseName: 'PleaseProvideThroughTheParentYAML'
+  environmentName: 'PleaseProvideThroughTheParentYAML'
+  deployPool: 'PleaseProvideThroughTheParentYAML'
+
+jobs:
+  - job: IntegrationJob
+    displayName: 'Integrating on ${{parameters.environmentName}} DB'
+    pool:
+      name: ${{parameters.deployPool}}
+    steps:
+      # Build
+      - template: build-steps/build-steps.yml  # Template reference
+        parameters:
+          deployScript: ${{parameters.deployScript}}
+          databaseName: ${{parameters.databaseName}}
+          environmentName: ${{parameters.environmentName}}
+
+      # Test
+      - template: test-steps/test-steps.yml  # Template reference
+        parameters:
+          databaseName: ${{parameters.databaseName}}
+          environmentName: ${{parameters.environmentName}}
+
+      # Publish
+      - template: publish-steps/publish-steps.yml  # Template reference
+        parameters:
+          databaseName: ${{parameters.databaseName}}
