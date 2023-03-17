@@ -27,7 +27,7 @@ steps:
 - task: PowerShell@2
   inputs:
     filePath: 'build_push.ps1'
-    arguments: '123 DevOpsPorto-Db API-CCUJNFBBWVZY7O9P8TONCEVFMJAVG3KH'
+    arguments: '123.0.0 DevOpsPorto-Db API-CCUJNFBBWVZY7O9P8TONCEVFMJAVG3KH'
   displayName: "push nuspec package"
 
 - task: OctopusPush@6
