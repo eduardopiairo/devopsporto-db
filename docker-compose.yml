@@ -1,0 +1,49 @@
+version: '3'
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: "developer_sql_gen_2019"
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=P@ssw0rd
+      - MSSQL_PID=Developer
+      - MSSQL_TCP_PORT=1433
+    ports:
+      - "1433:1433"
+    restart: on-failure
+    command: /bin/sh -c "(/opt/mssql/bin/sqlservr &) && sleep 10s && /opt/mssql-tools/bin/sqlcmd -S localhost -Usa -PP@ssw0rd -dmaster -Q'CREATE DATABASE dx' && sleep infinity"
+
+  flyway-info:
+    image: flyway/flyway
+    container_name: developer-flyway-info
+    command: -url='jdbc:sqlserver://db;databaseName=dx;encrypt=true;trustServerCertificate=true' -user=sa -password=P@ssw0rd -connectRetries=60 info
+    depends_on:
+      - db
+    volumes:
+      - ./devopsporto-db/sql:/flyway/sql
+    links:
+      - "db:database"
+
+  flyway-migrate:
+    image: flyway/flyway
+    container_name: developer-flyway-migrate
+    command: -url='jdbc:sqlserver://db;databaseName=dx;encrypt=true;trustServerCertificate=true' -user=sa -password=P@ssw0rd -connectRetries=60 migrate
+    depends_on:
+      flyway-info:
+        condition: service_completed_successfully
+    volumes:
+      - ./flyway_migrations:/flyway/sql
+    links:
+      - "db:database"
+
+  flyway-info-lastcheck:
+    image: flyway/flyway
+    container_name: developer-flyway-info-lastcheck
+    command: -url='jdbc:sqlserver://db;databaseName=dx;encrypt=true;trustServerCertificate=true' -user=sa -password=P@ssw0rd -connectRetries=60 info
+    depends_on:
+      flyway-migrate:
+        condition: service_completed_successfully
+    volumes:
+      - ./flyway_migrations:/flyway/sql
+    links:
+      - "db:database"
