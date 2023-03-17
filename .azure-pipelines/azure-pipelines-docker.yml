@@ -1,0 +1,41 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+  - develop
+  - feature/*
+
+name: 0.0.$(Build.BuildId)
+
+pool:
+  vmImage: ubuntu-latest
+
+
+stages:
+  - stage: Build
+    jobs:
+      - job: Build_Docker_Compose
+        steps:
+          - task: DockerCompose@0
+            displayName: Run Docker Compose File
+            inputs:
+              buildImages: true
+              action: Run a Docker Compose command
+              dockerComposeCommand: "up -d"
+          - script: docker ps
+            displayName: 'docker ps'
+          - script: docker logs -f developer-flyway-info
+            displayName: 'docker logs flyway info'
+          - script: sleep 10
+          - script: docker logs -f developer-flyway-migrate
+            displayName: 'docker logs flyway migrate'
+          - script: sleep 10
+          - script: docker logs developer-flyway-info-lastcheck
+            displayName: 'docker logs flyway info last check'
+          - task: DockerCompose@0
+            displayName: Run Docker Compose down
+            inputs:
+              action: Run a Docker Compose command
+              dockerComposeCommand: "down"
