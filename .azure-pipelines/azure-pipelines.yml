@@ -12,16 +12,14 @@ pool:
   vmImage: windows-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
-
 - task: PowerShell@2
   inputs:
     filePath: 'build_db_nuspec.ps1'
     arguments: 'DevOpsPorto-Db'
+  displayName: "create nuspec"
+
+- task: PowerShell@2
+  inputs:
+    filePath: 'build_pack.ps1'
+    arguments: 'DevOpsPorto-Db 123'
   displayName: "create nuspec"
