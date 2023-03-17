@@ -4,7 +4,8 @@
 # https://aka.ms/yaml
 
 trigger:
-- demo
+- main
+- feature/*
 
 pool:
   vmImage: ubuntu-latest
