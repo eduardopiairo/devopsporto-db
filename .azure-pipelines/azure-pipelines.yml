@@ -33,6 +33,6 @@ steps:
 - task: OctopusPush@6
   inputs:
     OctoConnectedServiceName: 'Octopus Sever'
-    Space: 'Default Project Group'
+    Space: 'Default'
     Packages: 'DevOpsPorto-Db.123.0.0.nupkg'
     Replace: 'false'
