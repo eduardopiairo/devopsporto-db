@@ -22,6 +22,6 @@ steps:
 
 - task: PowerShell@2
   inputs:
-    filePath: 'build/build_db_nuspec.ps1'
+    filePath: 'build_db_nuspec.ps1'
     arguments: 'build'
   displayName: "create nuspec"
