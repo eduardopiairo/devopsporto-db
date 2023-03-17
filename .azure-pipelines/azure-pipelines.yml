@@ -22,4 +22,17 @@ steps:
   inputs:
     filePath: 'build_pack.ps1'
     arguments: '123 DevOpsPorto-Db'
-  displayName: "create nuspec"
+  displayName: "build nuspec package"
+
+# - task: PowerShell@2
+#   inputs:
+#     filePath: 'build_push.ps1'
+#     arguments: '123 DevOpsPorto-Db'
+#   displayName: "build nuspec package"
+
+- task: OctopusPush@6
+  inputs:
+    OctoConnectedServiceName: 'Octopus Sever'
+    Space: 'Default Project Group'
+    Packages: 'DevOpsPorto-Db.123.0.0.nupkg'
+    Replace: 'false'
