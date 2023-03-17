@@ -21,5 +21,5 @@ steps:
 - task: PowerShell@2
   inputs:
     filePath: 'build_pack.ps1'
-    arguments: 'DevOpsPorto-Db 123'
+    arguments: '123 DevOpsPorto-Db'
   displayName: "create nuspec"
